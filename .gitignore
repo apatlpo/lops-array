@@ -7,6 +7,10 @@ clean
 __pycache__/
 *.py[cod]
 
+# datarmor files
+dask-scheduler.o*
+dask-worker.o*
+
 # eclipse related files 
 .project
 .pydevproject
