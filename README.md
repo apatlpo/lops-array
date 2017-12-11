@@ -14,6 +14,20 @@ Play and benchmark xarray/dask libraries in an oceanographic / numerical modelin
 
 Librairies are installed via conda, see [here](https://github.com/apatlpo/lops-array/blob/master/doc/CONDA.md) for more details
 
+## Init dask cluster
+
+In order to start a dask cluster, run the following commands:
+
+```
+cd datarmor/
+./launch-dask.sh ${N_WORK_NODES}
+```
+
+where ```N_WORK_NODES``` is the number of work nodes.
+
+See [here](https://pangeo-data.github.io/pangeo/setup_guides/cheyenne.html) for a strong source of inspiration
+
+
 ## Useful links
 Xarray: [doc](http://xarray.pydata.org/en/stable/index.html) + [github](https://github.com/pydata/xarray)
 
