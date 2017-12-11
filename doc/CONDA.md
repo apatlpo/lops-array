@@ -32,7 +32,6 @@ Miniconda
 Installation
 
 After downloading Miniconda3-latest-Linux-x86_64.sh or Miniconda3-latest-MacOSX-x86_64.sh
-bash Miniconda3-latest-MacOSX-x86_64.sh
 
 Miniconda must be used with bash. If you want to use it with csh, add in your .cshrc (pas terrible!!!)
 ```
