@@ -1,6 +1,12 @@
 # HOWTO 
 
-There are two ways in order to setup a dask cluster:
+In order to start a dask cluster, run the following command:
 
-see [here](https://pangeo-data.github.io/pangeo/setup_guides/cheyenne.html) for a strong source of inspiration
+```
+./launch-dask.sh ${N_WORK_NODES}
+```
+
+where ```N_WORK_NODES``` is the number of work nodes.
+
+See [here](https://pangeo-data.github.io/pangeo/setup_guides/cheyenne.html) for a strong source of inspiration
 
