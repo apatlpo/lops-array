@@ -19,6 +19,8 @@ Librairies are installed via conda, see [here](https://github.com/apatlpo/lops-a
 In order to start a dask cluster, run the following commands:
 
 ```
+bash
+source activate lops-array 
 cd datarmor/
 ./launch-dask.sh ${N_WORK_NODES}
 ```
