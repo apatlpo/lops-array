@@ -10,6 +10,10 @@ Play and benchmark xarray/dask libraries in an oceanographic / numerical modelin
 - Move data if necessary
 - september/october 2018: NG actively works on the project
 
+## Librairies installation
+
+Librairies are installed via conda, see [here](https://github.com/apatlpo/lops-array/blob/master/doc/CONDA.md) for more details
+
 ## Useful links
 Xarray: [doc](http://xarray.pydata.org/en/stable/index.html) + [github](https://github.com/pydata/xarray)
 
