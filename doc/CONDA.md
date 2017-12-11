@@ -1,9 +1,9 @@
 # Install useful libraries for this project:
 
 
-Download Miniconda2 from the [conda website](https://conda.io/miniconda.html)
+Download Miniconda3 from the [conda website](https://conda.io/miniconda.html)
 ```
-bash Miniconda2-latest-Linux-x86_64.sh
+bash Miniconda3-latest-MacOSX-x86_64.sh
 bash
 conda update conda
 conda create --name lops-array python
@@ -12,11 +12,12 @@ conda install xarray -c conda-forge
 conda install graphviz -c conda-forge
 conda install cartopy -c conda-forge
 conda install jupyter -c conda-forge
+conda install gsw -c conda-forge
 ```
 
 In order to add the environnement to kernels available to jupyter, you need to run:
 ```
-python -m ipykernel install --user --name lops-array --display-name "lops-array project env"
+python -m ipykernel install --user --name lops-array --display-name "LOPS-xarray project env"
 ```
 
 # Miniconda in general:
@@ -30,8 +31,8 @@ The other difference is that the Python 3 version of Miniconda will default to P
 Miniconda
 Installation
 
-After downloading Miniconda2-latest-Linux-x86_64.sh
-bash Miniconda2-latest-Linux-x86_64.sh
+After downloading Miniconda3-latest-Linux-x86_64.sh or Miniconda3-latest-MacOSX-x86_64.sh
+bash Miniconda3-latest-MacOSX-x86_64.sh
 
 Miniconda must be used with bash. If you want to use it with csh, add in your .cshrc (pas terrible!!!)
 ```
@@ -40,7 +41,7 @@ Miniconda must be used with bash. If you want to use it with csh, add in your .c
 # alias Miniconda
 #----------------------------------------------------------------
 #
-setenv PATH ${PATH}: /home/mulroy/slgentil/miniconda2/bin
+setenv PATH ${PATH}: /home/mulroy/slgentil/miniconda3/bin
 alias source_activate 'setenv OLDPATH ${PATH};setenv PATH /home/mulroy/slgentil/miniconda2/envs/\!*/bin:${PATH}'
 alias source_deactivate 'setenv PATH $OLDPATH'
 ```
