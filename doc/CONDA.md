@@ -15,6 +15,13 @@ conda install jupyter -c conda-forge
 conda install gsw -c conda-forge
 ```
 
+In order to use xarray master (see [here](https://github.com/pangeo-data/pangeo/issues/1))
+
+```
+pip install git+https://github.com/pydata/xarray.git --upgrade
+```
+
+
 In order to add the environnement to kernels available to jupyter, you need to run:
 ```
 python -m ipykernel install --user --name lops-array --display-name "LOPS-xarray project env"
