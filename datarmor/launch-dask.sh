@@ -4,7 +4,7 @@ set -e
 # Usage:
 #   bash
 #   source activate pangeo
-#   ./launch-dask.sh 
+#   ./launch-dask.sh 4 
 
 SCHEDULER=$HOME/dask/scheduler.json
 rm -f $SCHEDULER
