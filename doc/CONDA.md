@@ -12,7 +12,6 @@ conda install xarray -c conda-forge
 conda install graphviz -c conda-forge
 conda install cartopy -c conda-forge
 conda install jupyter -c conda-forge
-conda install gsw -c conda-forge
 ```
 
 In order to use xarray master (see [here](https://github.com/pangeo-data/pangeo/issues/1))

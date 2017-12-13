@@ -14,12 +14,12 @@
 # Setup Environment
 setenv PATH ${HOME}/.miniconda3/envs/pangeo/bin:${PATH}
 
-setenv SCHEDULER ${HOME}/dask/scheduler.json
+setenv SCHEDULER ${DATAWORK}/dask/scheduler.json
 rm -f ${SCHEDULER}
 mpirun --np 7 dask-mpi --nthreads 4 \
      --memory-limit 1e10 \
      --interface ib0 \
-     --local-directory ${HOME}/dask \
+     --local-directory ${DATAWORK}/dask \
      --scheduler-file=${SCHEDULER}
 
 ## useful info:

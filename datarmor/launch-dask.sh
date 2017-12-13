@@ -6,7 +6,13 @@ set -e
 #   source activate pangeo
 #   ./launch-dask.sh 4 
 
-SCHEDULER=$HOME/dask/scheduler.json
+source activate pangeo
+
+# create a directory to store temporary dask data
+mkdir -p $DATAWORK/dask 
+echo "Clean up ${DATAWORK}/dask"
+
+SCHEDULER=$DATAWORK/dask/scheduler.json
 rm -f $SCHEDULER
 
 echo "Launching dask scheduler"
@@ -44,7 +50,6 @@ done
 default=$HOME
 notebook=${2:-$default}
 echo "Setting up Jupyter Lab, Notebook dir: ${notebook}"
-source activate pangeo
 ./setup-jlab.py --log_level=DEBUG --jlab_port=8877 --dash_port=8878 \
     --notebook_dir $notebook --scheduler_file $SCHEDULER
 
