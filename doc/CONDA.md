@@ -6,10 +6,10 @@ Download Miniconda3 from the [conda website](https://conda.io/miniconda.html)
 bash Miniconda3-latest-MacOSX-x86_64.sh
 bash
 conda update conda
-conda create --name lops-array python
-source activate lops-array
+conda create --name pangeo python
+source activate pangeo
 conda install xarray -c conda-forge
-conda install graphviz -c conda-forge
+conda install graphviz -c conda-forge (or, depending on success) pip install graphviz
 conda install cartopy -c conda-forge
 conda install jupyter -c conda-forge
 ```
@@ -23,7 +23,7 @@ pip install git+https://github.com/pydata/xarray.git --upgrade
 
 In order to add the environnement to kernels available to jupyter, you need to run:
 ```
-python -m ipykernel install --user --name lops-array --display-name "LOPS-xarray project env"
+python -m ipykernel install --user --name pangeo --display-name "pangeo project env"
 ```
 
 # Miniconda in general:
