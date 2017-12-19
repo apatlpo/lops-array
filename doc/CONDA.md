@@ -9,7 +9,7 @@ conda update conda
 conda create --name pangeo python
 source activate pangeo
 conda install xarray -c conda-forge
-conda install graphviz -c conda-forge (or, depending on success) pip install graphviz
+conda install -c conda-forge python-graphviz
 conda install cartopy -c conda-forge
 conda install jupyter -c conda-forge
 ```
