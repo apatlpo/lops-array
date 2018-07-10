@@ -1,56 +1,28 @@
 #!/bin/bash
-set -e
-
 # Usage:
-#   bash
-#   source activate pangeo
-#   ./launch-dask.sh 4 
 
-source activate pangeo
+# ./launch
 
-# create a directory to store temporary dask data
-mkdir -p $DATAWORK/dask 
-echo "Clean up ${DATAWORK}/dask"
+rm daskf.pbs &> /dev/null
 
-SCHEDULER=$DATAWORK/dask/scheduler.json
-rm -f $SCHEDULER
-
-echo "Launching dask scheduler"
-s=`qsub launch-dask-scheduler.sh`
-sjob=${s%.*}
-echo ${s}
-
-workers=${1:-4}
-echo "Launching dask workers (${workers})"
-for i in $(seq 1 ${workers}); do
-    qsub launch-dask-worker.sh
-done
-
-qstat ${sjob}
-
-# block until the scheduler job starts
-while true; do
-    status=`qstat ${sjob} | tail -n 1`
-    echo ${status}
-    if [[ ${status} =~ " R " ]]; then
-        break
+# read from command line the number of arguments used
+if [ $# -eq 0 ]; then
+    export NNODES=8
+    cp dask.pbs daskf.pbs
+else
+    export NNODES=$1
+    if (( $NNODES > 18 )); then
+        export QUEUE="big" 
+    else
+        export QUEUE="mpi_$NNODES"
     fi
-    sleep 1
-done
+    sed -e "s/mpi_8/$QUEUE/g" dask.pbs > daskf.pbs 
+    sed -i -e "s/select=8/select=$NNODES/g" daskf.pbs
+fi
 
-# wait for scheduler.json
-while true; do
-    if [ -f $SCHEDULER ]; then
-        echo " scheduler.json has been found "
-        break
-    fi
-    sleep 1
-done
+echo "Number of nodes used for dask: $NNODES"
 
-default=$HOME
-notebook=${2:-$default}
-echo "Setting up Jupyter Lab, Notebook dir: ${notebook}"
-./setup-jlab.py --log_level=DEBUG --jlab_port=8877 --dash_port=8878 \
-    --notebook_dir $notebook --scheduler_file $SCHEDULER
+qsub -m n daskf.pbs
+
 
 
