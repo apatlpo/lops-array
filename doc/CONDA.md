@@ -1,25 +1,16 @@
 # Install useful libraries for this project:
 
-
 Download Miniconda3 from the [conda website](https://conda.io/miniconda.html)
 ```
-bash Miniconda3-latest-MacOSX-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
 bash
 conda update conda
-conda create --name pangeo python
-source activate pangeo
-conda install xarray -c conda-forge
-conda install -c conda-forge python-graphviz
-conda install cartopy -c conda-forge
-conda install jupyter -c conda-forge
+conda create -n lops-array -c conda-forge python=3.6 dask dask-jobqueue \
+            xarray jupyterlab cartopy zarr
+conda activate lops-array
+cd lops-array/
+cp datarmor/jobqueue.yaml datarmor/distributed.yaml ~/.config/dask/
 ```
-
-In order to use xarray master (see [here](https://github.com/pangeo-data/pangeo/issues/1))
-
-```
-pip install git+https://github.com/pydata/xarray.git --upgrade
-```
-
 
 In order to add the environnement to kernels available to jupyter, you need to run:
 ```

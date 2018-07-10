@@ -16,19 +16,30 @@ Librairies are installed via conda, see [here](https://github.com/apatlpo/lops-a
 
 ## Init dask cluster
 
-In order to start a dask cluster, run the following commands:
+You need first to start a jupyterlab session with the following commands (from the `datarmor/` folder):
 
 ```
 bash
-source activate lops-array 
-cd datarmor/
-./launch-dask.sh ${N_WORK_NODES}
+source activate lops-array
+./launch-jlab.sh
 ```
 
-where ```N_WORK_NODES``` is the number of work nodes.
+(*will be updated soon*) The dask cluster is then created from jupyter-lab with [dask-jobqueue](https://dask-jobqueue.readthedocs.io/en/latest/):
 
-See [here](https://pangeo-data.github.io/pangeo/setup_guides/cheyenne.html) for a strong source of inspiration
+```
+from dask_jobqueue import PBSCluster
+local_dir = os.getenv('TMPDIR')
+cluster = PBSCluster(local_directory=local_dir)
+w = cluster.start_workers(10)
 
+from dask.distributed import Client
+client = Client(cluster)
+```
+
+Kill jobs once done with computations in  a notebook with:
+```
+cluster.scheduler.close()
+```
 
 ## Useful links
 Xarray: [doc](http://xarray.pydata.org/en/stable/index.html) + [github](https://github.com/pydata/xarray)
