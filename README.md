@@ -2,12 +2,12 @@
 Play and benchmark xarray/dask libraries in an oceanographic / numerical modeling context
 
 ## Roadmap
-- Define relevant diagnostics (AP)
-- Write a starter notebook with NATL60 outputs (AP)
-- Identify profiling tools and metrics
 - Perform a technological watch on the pangeo project: [pangeo-data](https://pangeo-data.github.io/)  +  [github](https://github.com/pangeo-data/pangeo)
-- Identify computing platformS
-- Move data if necessary
+- Define relevant diagnostics (AP): rechunking to process along time with a synthetic dataset, identify data access choking plus appropriate chunking 
+- Write a starter notebook with NATL60 outputs (AP): na
+- Identify profiling tools and metrics: dashboard, basic timing
+- Identify computing platformS: datarmor
+- Move data if necessary: create synthetic dataset instead
 - september/october 2018: NG actively works on the project
 
 ## Librairies installation
