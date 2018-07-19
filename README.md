@@ -16,7 +16,7 @@ Librairies are installed via conda, see [here](https://github.com/apatlpo/lops-a
 
 ## Init dask cluster
 
-You need first to start a jupyterlab session with the following commands (from the `datarmor/` folder):
+You need first to start a jupyterlab session with the following commands (from the `lops-array/datarmor/` folder):
 
 ```
 bash
@@ -45,6 +45,8 @@ cluster.scheduler.close()
 Xarray: [doc](http://xarray.pydata.org/en/stable/index.html) + [github](https://github.com/pydata/xarray)
 
 Dask: [doc](http://dask.pydata.org/en/latest/) + [github](https://github.com/dask/dask)
+
+Dask dash-board: [video](https://www.youtube.com/watch?v=N_GqzcuGLCY)
 
 Distributed: [doc](https://distributed.readthedocs.io/en/latest/)
 
