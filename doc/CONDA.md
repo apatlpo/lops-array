@@ -6,7 +6,7 @@ bash Miniconda3-latest-Linux-x86_64.sh
 bash
 conda update conda
 conda create -n lops-array -c conda-forge python=3.6 dask dask-jobqueue \
-            xarray jupyterlab cartopy zarr
+            xarray jupyterlab cartopy zarr python-graphviz
 conda activate lops-array
 cd lops-array/
 cp datarmor/jobqueue.yaml datarmor/distributed.yaml ~/.config/dask/
