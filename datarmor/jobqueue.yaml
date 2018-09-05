@@ -3,9 +3,9 @@ jobqueue:
     name: dask-worker
 
     # Dask worker options
-    threads: 4
+    cores: 8
     processes: 2
-    memory: 50GB
+    memory: 100GB
     interface: ib0
     death-timeout: 60
     local-directory: null
