@@ -3,7 +3,7 @@
 Download Miniconda3 from the [conda website](https://conda.io/miniconda.html)
 ```
 bash Miniconda3-latest-Linux-x86_64.sh
-bash
+(install in $HOME/.miniconda3 and not in $HOME/miniconda3)
 conda update conda
 conda create -n lops-array -c conda-forge python=3.6 dask dask-jobqueue \
             xarray jupyterlab cartopy zarr python-graphviz
@@ -17,10 +17,8 @@ Make sure `.cshrc` contains the following line (in order to have access to conda
 source $HOME/.miniconda3/etc/profile.d/conda.csh
 ```
 
-In order to add the environnement to kernels available to jupyter, you need to run:
-```
-python -m ipykernel install --user --name pangeo --display-name "pangeo project env"
-```
+If jupyter is not setup for password access, you may need to setup jupyter properly, see
+[pangeo doc](http://pangeo.io/setup_guides/hpc.html#configure-jupyter)
 
 # Miniconda in general:
 
