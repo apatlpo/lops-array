@@ -19,18 +19,16 @@ Librairies are installed via conda, see [here](https://github.com/apatlpo/lops-a
 You need first to start a jupyterlab session with the following commands (from the `lops-array/datarmor/` folder):
 
 ```
-bash
-source activate lops-array
+conda activate lops-array
 ./launch-jlab.sh
 ```
 
-(*will be updated soon*) The dask cluster is then created from jupyter-lab with [dask-jobqueue](https://dask-jobqueue.readthedocs.io/en/latest/):
+The dask cluster is then created from jupyter-lab with [dask-jobqueue](https://dask-jobqueue.readthedocs.io/en/latest/):
 
 ```
 from dask_jobqueue import PBSCluster
-local_dir = os.getenv('TMPDIR')
-cluster = PBSCluster(local_directory=local_dir)
-w = cluster.start_workers(10)
+cluster = PBSCluster()
+w = cluster.scale(8)
 
 from dask.distributed import Client
 client = Client(cluster)

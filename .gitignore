@@ -10,6 +10,8 @@ __pycache__/
 # datarmor files
 dask-scheduler.o*
 dask-worker.o*
+jlab.*.log
+jlab.pbs.*
 
 # eclipse related files 
 .project

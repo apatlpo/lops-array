@@ -12,6 +12,11 @@ cd lops-array/
 cp datarmor/jobqueue.yaml datarmor/distributed.yaml ~/.config/dask/
 ```
 
+Make sure `.cshrc` contains the following line (in order to have access to conda commands):
+```
+source $HOME/.miniconda3/etc/profile.d/conda.csh
+```
+
 In order to add the environnement to kernels available to jupyter, you need to run:
 ```
 python -m ipykernel install --user --name pangeo --display-name "pangeo project env"

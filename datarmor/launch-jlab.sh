@@ -11,7 +11,6 @@ set -e
 #  If you want to specify an conda environment use: -e <env_name>
 #  If you want to provide a specific digit for the port last digits: -p digit
 
-
 POSITIONAL=()
 while [[ $# -gt 0 ]]
 do
@@ -37,7 +36,7 @@ done
 set -- "${POSITIONAL[@]}" # restore positional parameters
 
 if [ "${#CONDAENV}" -eq 0 ]; then
-    CONDAENV="equinox"
+    CONDAENV="lops-array"
 fi
 
 if [ "${#PORTDIGIT}" -eq 0 ]; then
@@ -55,7 +54,8 @@ fi
 echo Conda environment: "${CONDAENV}"
 #echo POSITIONAL = "${POSITIONAL[0]}"
 
-source activate $CONDAENV
+source $HOME/.miniconda3/etc/profile.d/conda.sh
+conda activate $CONDAENV
 
 # create a log file with random name and delete existing jlab log file if any
 JLAB_LOG="jlab.$RANDOM.log"
