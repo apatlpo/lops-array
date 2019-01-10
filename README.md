@@ -3,7 +3,7 @@ Play and benchmark xarray/dask libraries in an oceanographic / numerical modelin
 
 ## Librairies installation
 
-Librairies are installed via conda, see [here](https://github.com/apatlpo/lops-array/blob/master/doc/CONDA.md) for more details
+Librairies are installed via conda, see notes for [hal](https://github.com/apatlpo/lops-array/blob/master/doc/hal.md) and [datarmor](https://github.com/apatlpo/lops-array/blob/master/doc/CONDA.md)
 
 ## Init dask cluster
 
@@ -31,6 +31,7 @@ cluster.scheduler.close()
 ```
 
 ## Useful links
+
 Xarray: [doc](http://xarray.pydata.org/en/stable/index.html) + [github](https://github.com/pydata/xarray)
 
 Dask: [doc](http://dask.pydata.org/en/latest/) + [github](https://github.com/dask/dask)
