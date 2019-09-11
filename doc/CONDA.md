@@ -5,9 +5,11 @@ Download Miniconda3 from the [conda website](https://conda.io/miniconda.html)
 bash Miniconda3-latest-Linux-x86_64.sh
 (install in $HOME/.miniconda3 and not in $HOME/miniconda3)
 conda update conda
-conda create -n lops-array -c conda-forge python=3.6 dask dask-jobqueue \
-            xarray jupyterlab cartopy zarr python-graphviz
+conda create -n lops-array -c conda-forge python=3.7 jupyterlab \
+        xarray graphviz dask-jobqueue netCDF4 zarr \
+        cartopy hvplot nodejs
 conda activate lops-array
+jupyter labextension install @pyviz/jupyterlab_pyviz # hvplot
 cd lops-array/
 cp datarmor/jobqueue.yaml datarmor/distributed.yaml ~/.config/dask/
 ```
@@ -85,7 +87,7 @@ conda install packagename
 ```
 Remove conda
 ```
-rm -rf /home/mulroy/slgentil/miniconda2 
+rm -rf /home/mulroy/slgentil/miniconda2
 ```
 
 ## Install a package from Anaconda.org
@@ -111,5 +113,3 @@ Exporting environment
 conda env export > environment.yml on a machine
 conda env create -f environment.yml -n $ENV_NAME on the new machine
 ```
-
-
